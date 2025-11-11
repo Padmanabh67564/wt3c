@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+<!-- ng new userApp
+cd userApp
+ng generate component register
+ng generate component login
+ng generate component profile
+ng generate service auth
+ng generate module app-routing --flat --module=app -->  commands to setup project
