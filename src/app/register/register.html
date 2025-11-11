@@ -29,3 +29,184 @@
   </form>
   <a routerLink="/login" class="btn btn-link mt-3 w-100">Already registered? Login</a>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*🎯 Purpose:
+
+This file creates the registration form (UI) for new users.
+It allows users to enter their name, email, and password, and when they click Register, it calls a function in the TypeScript file to save their data.
+
+🧱 Code Explanation (Line by Line)
+1️⃣ Outer container
+<div class="container mt-5 col-md-4">
+  <h3>Register</h3>
+
+
+Explanation:
+
+container → Centers the form on the page using Bootstrap.
+
+mt-5 → Adds top margin for spacing.
+
+col-md-4 → Limits the form width on medium-sized screens.
+
+<h3> → Displays the heading “Register”.
+
+✅ In short:
+
+Creates a centered, neat registration box with a heading.
+
+2️⃣ Form Tag
+<form (ngSubmit)="registerUser()">
+
+
+Explanation:
+
+(ngSubmit) → Angular event binding.
+
+When the form is submitted (button clicked), it runs the registerUser() function from the TypeScript file.
+
+✅ In short:
+
+When the user clicks Register, the registerUser() function runs.
+
+3️⃣ Name Input
+<input
+  type="text"
+  [(ngModel)]="user.name"
+  name="name"
+  class="form-control mb-2"
+  placeholder="Name"
+  required
+/>
+
+
+Explanation:
+
+type="text" → Input for the user’s name.
+
+[(ngModel)]="user.name" → Two-way data binding — connects input to the user.name variable in the TypeScript file.
+
+name="name" → Needed for Angular forms.
+
+form-control and mb-2 → Bootstrap classes for styling.
+
+required → Makes the field mandatory.
+
+✅ In short:
+
+Takes the user’s name and stores it in the user.name variable.
+
+4️⃣ Email Input
+<input
+  type="email"
+  [(ngModel)]="user.email"
+  name="email"
+  class="form-control mb-2"
+  placeholder="Email"
+  required
+/>
+
+
+Explanation:
+
+Similar to the name field, but for email.
+
+Stores the typed email in the user.email variable.
+
+✅ In short:
+
+Stores the user’s email in the user.email variable.
+
+5️⃣ Password Input
+<input
+  type="password"
+  [(ngModel)]="user.password"
+  name="password"
+  class="form-control mb-3"
+  placeholder="Password"
+  required
+/>
+
+
+Explanation:
+
+Used for the password field.
+
+Stores entered password in user.password.
+
+type="password" hides the input for security.
+
+✅ In short:
+
+Takes password input and stores it in user.password.
+
+6️⃣ Submit Button
+<button class="btn btn-primary w-100" type="submit">Register</button>
+
+
+Explanation:
+
+btn btn-primary → Blue Bootstrap button.
+
+w-100 → Makes the button full width.
+
+type="submit" → Submits the form → triggers (ngSubmit)="registerUser()".
+
+✅ In short:
+
+Button to submit the form and call registerUser().
+
+7️⃣ Login Link
+<a routerLink="/login" class="btn btn-link mt-3 w-100">Already registered? Login</a>
+
+
+Explanation:
+
+routerLink="/login" → Angular’s way to navigate to the login page.
+
+btn btn-link → Styles the link like a button.
+
+Message tells users they can go to the login page if already registered.
+
+✅ In short:
+
+A link that takes the user to the Login page.
+
+🧠 Viva Notes Summary
+Concept / Tag	Explanation
+(ngSubmit)	Calls a function when form is submitted
+[(ngModel)]	Two-way data binding between HTML and TypeScript
+form-control	Bootstrap class for input styling
+required	Makes input field mandatory
+routerLink	Used for Angular page navigation
+registerUser()	Function (in TS file) that handles registration logic
+user.name / email / password	Store input values for new user
+💬 Simple Viva Answer:
+
+“This is my registration page in Angular.
+It has a form where users enter their name, email, and password.
+I used [(ngModel)] for two-way data binding to store the values in a user object.
+When the user clicks Register, the registerUser() function (in TypeScript) runs to save the data.
+There’s also a link to the login page for existing users.”*/
