@@ -23,3 +23,28 @@ export class UserService {
     localStorage.removeItem('loggedInUser');
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*registerUser() → To save a new user
+
+loginUser() → To check user credentials
+
+getLoggedInUser() → To get the logged-in user’s data
+
+logoutUser() → To remove user data*/
