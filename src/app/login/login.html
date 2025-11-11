@@ -20,3 +20,47 @@
     <button class="btn btn-success w-100" type="submit">Login</button>
   </form>
 </div>
+
+/*🧩 What this file is:
+
+This is the login page (HTML template) of my Angular project.
+It shows the login form on the screen and connects it with the TypeScript code that will check the login details.
+
+🧱 Line-by-line in simple words
+<div class="container mt-5 col-md-4">
+
+This makes a small box in the center of the page using Bootstrap (for nice design).
+
+<h3>Login</h3>
+
+Shows the heading “Login”.
+
+<form (ngSubmit)="loginUser()">
+
+This means when the user clicks the Login button, the function loginUser() (from the TypeScript file) will run.
+
+<input type="email" [(ngModel)]="email" ... />
+
+It’s a box where the user types their email.
+
+[(ngModel)]="email" connects the input to a variable called email in the TypeScript file.
+So whatever the user types is stored in that variable.
+
+<input type="password" [(ngModel)]="password" ... />
+
+It’s a box for the password.
+
+Works the same way as the email input — it stores what the user types in the password variable.
+
+<button class="btn btn-success w-100" type="submit">Login</button>
+
+It’s a Login button.
+
+When clicked, it submits the form and runs the loginUser() function.
+
+💬 In simple words to say in viva:
+
+“This is my Angular login form.
+It takes the user’s email and password using [(ngModel)] for two-way data binding.
+When the user clicks Login, it runs the loginUser() function from the TypeScript file.
+I used Bootstrap classes to make it look neat and centered.*/
