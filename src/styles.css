@@ -5,3 +5,328 @@ ng generate component login
 ng generate component profile
 ng generate service auth
 ng generate module app-routing --flat --module=app -->  commands to setup project
+
+
+/*Answer:
+Angular is a framework by Google used to build single-page web applications (SPAs) using TypeScript, HTML, and CSS.
+
+✅ Syntax Example:
+
+ng new my-app    # to create a new Angular project
+ng serve         # to run the project
+
+⚙️ 2️⃣ What is a Component?
+
+Answer:
+A component is the basic building block of an Angular app — it controls a part of the screen (view).
+
+✅ Basic Syntax:
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-sample',
+  templateUrl: './sample.html',
+  styleUrls: ['./sample.css']
+})
+export class SampleComponent {
+  title = 'Hello Angular';
+}
+
+
+✅ Say in viva:
+
+“A component has an HTML file for design, a TypeScript file for logic, and a CSS file for styling.”
+
+⚙️ 3️⃣ What is @Component?
+
+Answer:
+@Component is a decorator that tells Angular this class is a component and gives information like selector, HTML, and CSS file names.
+
+✅ Syntax:
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.html',
+  styleUrls: ['./login.css']
+})
+
+⚙️ 4️⃣ What is Data Binding?
+
+Answer:
+Data binding connects the HTML and TypeScript so data can flow between them.
+
+✅ Types of Data Binding:
+
+Type	Syntax	Description
+Interpolation	{{ title }}	Displays data
+Property binding	[value]="name"	Sets property value
+Event binding	(click)="myFunction()"	Handles events
+Two-way binding	[(ngModel)]="email"	Syncs data both ways
+
+✅ Example:
+
+<input [(ngModel)]="email" placeholder="Enter email">
+<p>{{ email }}</p>
+
+⚙️ 5️⃣ What is ngModel?
+
+Answer:
+ngModel allows two-way data binding between an input field and a variable.
+
+✅ Syntax:
+
+<input [(ngModel)]="username">
+
+
+✅ Example (TS):
+
+username = 'Padmanabh';
+
+⚙️ 6️⃣ What is Routing in Angular?
+
+Answer:
+Routing lets us navigate between pages (components) without reloading the browser.
+
+✅ Syntax (app.routes.ts):
+
+import { Routes } from '@angular/router';
+import { Login } from './login/login';
+import { Register } from './register/register';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: 'register', component: Register },
+  { path: 'login', component: Login }
+];
+
+
+✅ In HTML:
+
+<a routerLink="/login">Login</a>
+<router-outlet></router-outlet>
+
+
+✅ Say:
+
+“Routing connects URLs to components using routerLink and router-outlet.”
+
+⚙️ 7️⃣ What is RouterLink?
+
+Answer:
+Used to navigate between pages.
+
+✅ Syntax:
+
+<a routerLink="/profile">Go to Profile</a>
+
+⚙️ 8️⃣ What is RouterOutlet?
+
+Answer:
+A placeholder where the routed component is displayed.
+
+✅ Syntax (in app.html):
+
+<router-outlet></router-outlet>
+
+⚙️ 9️⃣ What is a Service in Angular?
+
+Answer:
+A service is used to share data and logic between multiple components.
+
+✅ Syntax:
+
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  registerUser(user: any) {
+    console.log('User Registered:', user);
+  }
+}
+
+
+✅ Say:
+
+“My UserService handles registration, login, and logout.”
+
+⚙️ 🔟 What is Dependency Injection?
+
+Answer:
+It means Angular automatically provides (injects) required objects (like services) into components.
+
+✅ Syntax:
+
+constructor(private userService: UserService) {}
+
+
+✅ Say:
+
+“Angular injects my UserService into the component so I can use it directly.”
+
+⚙️ 11️⃣ What is ngOnInit()?
+
+Answer:
+A lifecycle hook that runs automatically when the component loads.
+
+✅ Syntax:
+
+ngOnInit() {
+  console.log('Component loaded');
+}
+
+
+✅ Say:
+
+“In my Profile component, I used ngOnInit() to check if the user is logged in.”
+
+⚙️ 12️⃣ What is LocalStorage?
+
+Answer:
+LocalStorage stores data in the browser permanently (until cleared manually).
+
+✅ Syntax:
+
+localStorage.setItem('user', JSON.stringify(user));
+const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+
+✅ Say:
+
+“I used LocalStorage to store and retrieve registered user data.”
+
+⚙️ 13️⃣ What is a Standalone Component?
+
+Answer:
+A standalone component does not need to be declared in any module — it works independently.
+
+✅ Syntax:
+
+@Component({
+  standalone: true,
+  selector: 'app-login',
+  imports: [FormsModule],
+  templateUrl: './login.html'
+})
+
+
+✅ Say:
+
+“All my components are standalone, so no module file is required.”
+
+⚙️ 14️⃣ What is a Directive?
+
+Answer:
+A directive changes how an HTML element behaves or appears.
+
+✅ Examples:
+
+<p *ngIf="isLoggedIn">Welcome!</p>
+<li *ngFor="let user of users">{{ user.name }}</li>
+
+
+✅ Say:
+
+“I used *ngIf and *ngFor directives in my project.”
+
+⚙️ 15️⃣ What is Interpolation?
+
+Answer:
+Interpolation displays variable data from TypeScript into HTML.
+
+✅ Syntax:
+
+<h2>Welcome {{ username }}</h2>
+
+
+✅ Example (TS):
+
+username = 'Padmanabh';
+
+⚙️ 16️⃣ What are Pipes in Angular?
+
+Answer:
+Pipes are used to format data in HTML.
+
+✅ Syntax:
+
+{{ today | date }}
+{{ name | uppercase }}
+
+
+✅ Say:
+
+“Pipes help format data like converting text to uppercase or formatting dates.”
+
+⚙️ 17️⃣ What is app.ts?
+
+Answer:
+The main (root) Angular component that connects everything.
+
+✅ Syntax:
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.html'
+})
+export class App {
+  title = 'My Angular App';
+}
+
+
+✅ Say:
+
+“This is my main Angular component where RouterOutlet loads other pages.”
+
+⚙️ 18️⃣ What is app.routes.ts?
+
+Answer:
+Contains all the route definitions that connect paths (URLs) to components.
+
+✅ Syntax:
+
+export const routes: Routes = [
+  { path: 'login', component: Login },
+  { path: 'register', component: Register }
+];
+
+
+✅ Say:
+
+“This file defines how users move between pages.”
+
+⚙️ 19️⃣ What are the main files in an Angular project?
+File	Purpose
+main.ts	Starts the Angular app
+app.ts	Root component logic
+app.html	Root component UI
+app.routes.ts	Defines routing paths
+user.ts	Custom service for user data
+index.html	Main HTML file that loads the app
+⚙️ 20️⃣ What are advantages of Angular?
+
+✅ Answer:
+
+Single Page Application
+
+Fast and structured
+
+Two-way data binding
+
+Component-based
+
+Built-in routing
+
+Reusable code
+
+✅ Say:
+
+“Angular makes web apps faster, cleaner, and easier to maintain.”
+
+💬 Sample Viva Summary You Can Say:
+
+“Angular is a frontend framework by Google that uses TypeScript.
+I created standalone components like Register, Login, and Profile.
+I used routing to move between pages and [(ngModel)] for two-way data binding.
+My UserService handles user registration, login, and logout using LocalStorage.
+I used RouterOutlet to load pages and routerLink for navigation.*/
